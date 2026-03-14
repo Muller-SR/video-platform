@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vídeos</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            margin:0;
+        }
+
+        .container{
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            margin-top:40px;
+            border-radius:6px;
+        }
+
+        h1{
+            margin-top:0;
+        }
+
+        ul{
+            padding-left:20px;
+        }
+
+        li{
+            margin-bottom:8px;
+        }
+
+        a{
+            text-decoration:none;
+            color:#3b5cff;
+        }
+
+        .top-actions{
+            margin-bottom:20px;
+        }
+
+        .button{
+            background:#3b5cff;
+            color:white;
+            padding:8px 14px;
+            border-radius:5px;
+            text-decoration:none;
+        }
+
+        .logout{
+            margin-top:20px;
+            display:inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Vídeos disponíveis</h1>
+
+<div class="top-actions">
+<a class="button" href="/add-video/">+ Adicionar vídeo</a>
+</div>
+
+<ul>
+{% for video in videos %}
+<li>
+<a href="/video/{{ video.id }}/">
+{{ video.title }}
+</a>
+</li>
+{% endfor %}
+</ul>
+
+<a class="logout" href="/logout/">Sair</a>
+
+</div>
+
+</body>
+</html>

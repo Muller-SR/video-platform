@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ video.title }}</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+        }
+
+        .container{
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            margin-top:40px;
+            border-radius:6px;
+        }
+
+        a{
+            color:#3b5cff;
+            text-decoration:none;
+        }
+
+        ul{
+            padding-left:20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>{{ video.title }}</h1>
+
+<p>{{ video.description }}</p>
+
+<p>
+<strong>Assistir o vídeo:</strong><br>
+<a href="{{ video.video_url }}" target="_blank">
+Abrir no YouTube
+</a>
+</p>
+
+<p><strong>Expira em:</strong> {{ expires_at }}</p>
+
+<h3>Destaques</h3>
+
+<ul>
+{% for h in highlights %}
+<li>{{ h.start_time }} - {{ h.end_time }}</li>
+{% empty %}
+<li>Nenhum destaque cadastrado</li>
+{% endfor %}
+</ul>
+
+<br>
+
+<a href="/videos/">Voltar</a>
+
+</div>
+
+</body>
+</html>

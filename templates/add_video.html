@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar vídeo</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+        }
+
+        .container{
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            margin-top:40px;
+            border-radius:6px;
+        }
+
+        input, textarea{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:#3b5cff;
+            color:white;
+            border:none;
+            padding:10px 16px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        a{
+            text-decoration:none;
+            color:#3b5cff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Cadastrar vídeo</h1>
+
+<form method="post">
+{% csrf_token %}
+
+<label>Título</label>
+<input type="text" name="title" required>
+
+<label>Descrição</label>
+<textarea name="description"></textarea>
+
+<label>URL do YouTube</label>
+<input type="text" name="video_url" required>
+
+<button type="submit">Salvar vídeo</button>
+
+</form>
+
+<br>
+
+<a href="/videos/">Voltar</a>
+
+</div>
+
+</body>
+</html>
